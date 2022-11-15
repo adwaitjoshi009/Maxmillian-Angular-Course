@@ -24,4 +24,24 @@ ng serve -o
 
 ***********************************************************************************************
 
+to add external packages or modules, import them in ngModule
+import any module by import statement in app.module.ts --> add in imports []
 
+***********************************************************************************************
+
+.DS_store file was bothering everytime, so needed to be added to gitignore:
+
+touch ~/.gitignore
+git config --global core.excludeFiles ~/.gitignore
+
+be careful what patterns you choose to ignore globally
+
+to add any file to gitignore:
+
+$ echo example.file >> .gitignore
+
+revise cat command once
+
+cat ~/.gitignore 
+gave contents of gitignore on console
+***********************************************************************************************
