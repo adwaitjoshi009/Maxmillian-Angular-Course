@@ -44,4 +44,13 @@ revise cat command once
 
 cat ~/.gitignore 
 gave contents of gitignore on console
+
 ***********************************************************************************************
+npm install bootstrap@3 --save
+installing bootstrap --> adding to styles [] in angular.json (path of bootstrap min css from
+bootstrap dist folder)
+if introduced in styles.css, any css becomes global for the app.
+
+***********************************************************************************************
+
+
