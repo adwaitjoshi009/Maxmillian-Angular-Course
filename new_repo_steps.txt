@@ -181,4 +181,34 @@ Then go for event binding.
 ts code can be written inside "" instead of a function, but that'd be verbose sometimes, so
 a function is preferable to be executed when an event is triggered.
 
+- which properties and events can be bound?
+all of them. Just google your_html_element properties and events for your_html_element.
+
+Passing and using data with event binding:
+input event
+$event object: emits the data that's been input. Fetches the event data, inshort.
+bootstrap form-control class for input
+event.target shows the element on which the event took place.
+event.target.value shows it's value, ie entered input, for ex.
+
+why did we have to use <HTMLInputElement>.event.target?
+what does any anyHtmlElement.event show us?
+
+
+Two-way binding:
+for this we'll need ngModel directive
+we introduce new directives by importing them inside app.module.ts file
+into the imports[]
+ngModel directive is inside formsModule, which in turn is inside @angular/forms.
+
+- two way binding is the combination of event and property binding.
+- the preproduced data can be shown as input as well as user input or user triggered event can
+change the data too.
+[(ngModel)="class_property"] is an example. Here [] and () show that property and event binding
+is combined here in the two way binding
+
+for example, in our input element
+in place of input event which is (input) and the handler that is, the function to run when the 
+event is fired, we did [(ngModel)]="component property"
+here, both event and property binding is taking place.
 
