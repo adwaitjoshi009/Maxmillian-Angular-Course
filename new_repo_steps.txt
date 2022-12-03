@@ -14,6 +14,7 @@ git remote -v                       tells origin
 git restore --staged .              unstages tracked files
 git log --name-status Head^..Head   see previous commit
 git log -1                          shows only one previous commit. -2 shows two and so on. 
+git show                            previous commit.
 
 ***********************************************************************************************
 
@@ -151,3 +152,9 @@ Types:
 - property binding [property]="data" -- output data
 - even binding (event) => "expression" -- react to user events.
 - two way binding [ngModel]="data"
+
+String interpolation: {{ component_variable}} or {{ 'any expression that'll resolve to the string' }}
+-even a method can be called {{ method }}, which should return a string though.
+
+-no multiline expressions or block expressions like if, else.
+-number is converted to string in it.

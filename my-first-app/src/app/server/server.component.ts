@@ -8,5 +8,11 @@ import { Component } from "@angular/core"
 
 })
 export class ServerComponent {
+    serverId: number = 1
+    serverStatus: string = 'running'
+    // these are class properties.
 
+    getServerStatus(){
+        return this.serverStatus
+    }
 }
