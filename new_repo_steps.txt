@@ -158,3 +158,13 @@ String interpolation: {{ component_variable}} or {{ 'any expression that'll reso
 
 -no multiline expressions or block expressions like if, else.
 -number is converted to string in it.
+
+
+can a function that returns a string be included in the string interpolation data binding? what about block expressions like if-else?
+what about multiline expressions?
+
+Property binding:
+- changes dom at runtime
+- [] tells angular that it is going to be property binding.
+- can propertybinding be done with directives and components? (yes)
+
