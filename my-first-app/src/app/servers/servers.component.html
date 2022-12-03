@@ -5,7 +5,10 @@
         <!-- [disabled] or [any html property] so this [] tells angular that this is 
         property binding. -->
 
-        ebutton class="btn btn-primary" [disabled]='allowNewServer'>Add Server</button>
+        <button class="btn btn-primary" [disabled]='allowNewServer'
+        (click)="onCreateServer()">Add Server</button>
+        <p>Server status: {{ serverStatus }}</p>
+        <p style="color: red" [innerText]="allowNewServer"></p>
         <app-server></app-server>
         <app-server></app-server>
     </div>

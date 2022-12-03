@@ -167,4 +167,18 @@ Property binding:
 - changes dom at runtime
 - [] tells angular that it is going to be property binding.
 - can propertybinding be done with directives and components? (yes)
+- [disabled]="any ts expression or class property"
+
+- When to use property binding and when to go for string interpolation:
+=> when you want a string returned in a template, string interpolation.
+=> when you want to change an html property or a component or a directive, property binding.
+
+Event binding:
+when user does something, an event gets triggered. Maybe mouse movement, click, etc.
+Then we have to change the data or communicate with the template.
+Then go for event binding.
+(any_event)="ts code"
+ts code can be written inside "" instead of a function, but that'd be verbose sometimes, so
+a function is preferable to be executed when an event is triggered.
+
 
