@@ -238,3 +238,12 @@ ngStyle
 [ngStyle]={backgroundColor: some function or a color}
 so, it's not as same as property binding, it's just that the property that we are trying to bind 
 also happens to be called as ngStyle. More on that later.
+
+- we are binding the property of the directive,$ Which has the same name.
+
+ngClass
+- Same as ngStyle, property of the directive is to be bound, which takes a js object as an argument.
+- This object has to be a key-value pair, key being css class name, value being the condition on which
+- it'd be decided to assign the class or not.
+- Write the necessary css class either in css file or in styles[] in component ts file of
+that component.
