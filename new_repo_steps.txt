@@ -212,3 +212,29 @@ in place of input event which is (input) and the handler that is, the function t
 event is fired, we did [(ngModel)]="component property"
 here, both event and property binding is taking place.
 
+Directives:
+Directives are the instructions added to the DOM. Componenet is a type of directive, with a template.
+There are directives without a template of their own. They have selector which preferably to be 
+used as html attribute (like the way name, class or type is written) format, over css class format.
+
+ngIf directive:
+- structural directive: changes structure of the dom, either adds the element or it doesn't.
+<p *ngIf="">...</p>        takes a boolean
+* is important here.
+ngIf is not hidden in the dom. It's either there or it isn't. Can see inspect element and the
+kind of hook angular creates to know where the if-true block should be entered or inserted.
+Structural directive means changes dom structure.
+
+ngIf can have else clause. With a marker or a local reference. More on that later.
+<p *ngIf="boolean else #_marker_or_local_reference>...</p>
+<ng-template #that_marker_or_local_reference>...</ng-template>
+
+
+attribute directives:
+- They look like html attributes, no * at the beginning, won't add or remove any structural change
+- They only change the element they were placed on.
+
+ngStyle
+[ngStyle]={backgroundColor: some function or a color}
+so, it's not as same as property binding, it's just that the property that we are trying to bind 
+also happens to be called as ngStyle. More on that later.
