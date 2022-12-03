@@ -8,7 +8,12 @@ git branch -M main
 git remote add origin git@github.com:adwaitjoshi009/something.git
 git push -u origin main
 
-git remote -v       tells origin 
+
+Some important git commands
+git remote -v                       tells origin 
+git restore --staged .              unstages tracked files
+git log --name-status Head^..Head   see previous commit
+git log -1                          shows only one previous commit. -2 shows two and so on. 
 
 ***********************************************************************************************
 
@@ -53,4 +58,96 @@ if introduced in styles.css, any css becomes global for the app.
 
 ***********************************************************************************************
 
+Journey of angular component
 
+it all starts with index.html. index.html is served --> scripts in it visible when inspected in browser -->
+they start basically the angular app-->  main.ts -->platformBrowserDynamic method followed by bootstrapModule and appModule is 
+passed to it --> appModule has an array that contains components that would be analysed when angular is looking at 
+index.html --> then angular understands that app-root selector in index.html is coming from app.Component.html -->
+as it was in bootstrap [] in appModule
+
+so the journey: main.ts --> appModule --> bootstrap[] --> appComponent --> it's selector in index.html is parsed
+--> then app.Component.html all is inserted into index.html.
+
+So the task for angular was to recognize what actually that <app-root> is.
+
+also, that loading... within app-root tag in index.html gets overridden at runtime with code in
+app.component.html, as angular is js framework, that manipulates dom at runtime
+
+***********************************************************************************************
+
+components
+
+appComponent will include our other components
+index.html will only contain appComponent, no other component
+
+@Component decorator
+decorators decorate classes, add metadata --> helps angular know what to do with that class
+eg. @Component decorator will tell angular that this class is a component, @ngModule decorator
+will say this class is an angular module
+
+also, just declaring a decorator is not enough, we'd have to pass it with js object, which contains
+that additional info or meta-data, which will help angular decide what to do with that class
+
+@Component, where it's coming from will ask the typescript. Typescript wants to know everything.
+So, we'd have to import it from @angular/core. It is a module. Angular is made up of various modules.
+
+also, in import statements, extension .ts is not required.
+
+***********************************************************************************************
+
+app.module.ts
+
+bootstrap[] tells angular which component to look for when starting, so that index.html selector
+will be parsed
+
+imports[] tells which modules are to be imported, for angular to function
+browserModule is required to run angular in browser
+
+components build webpages and modules bundle together different pieces into packages
+
+modules tell which features angular will be able to use
+
+angular, by default will not scan all of your files, that's where app.module helps.
+we don't add more components into index.html, so to add more components, we gotta add or register them
+in declarations[] so that angular will know which components to look for.
+
+***********************************************************************************************
+
+Nested component:
+ng generate component component_name
+ng g c component_name
+
+so, a new component from CLI can be created from a new terminal, not touching the running ngserve
+newly created component can be nested inside another component.
+
+***********************************************************************************************
+
+Inline templates:
+instead of using templateUrl, an html inline template (with lesser html elements) can be directly
+written inside component.ts file.
+
+***********************************************************************************************
+
+inline styling:
+in component's ts file, styleUrl is, unline templateUrl, an array that can contain multiple urls to
+style files.
+
+inline styling, if it's brief and doesn't need a separate styling file, can be defined as
+styles = [`array of strings`]
+
+note: component.styles.css trumps or is global styling, overrides component.html styling if any, but styles [] of strings
+from ts file trumps or overrides everything, thus acts as global.
+
+
+***********************************************************************************************
+
+Data binding:
+
+data binding is the communication between component.ts file and the respective template.
+
+Types:
+- string interpolation {{ data }} -- output data
+- property binding [property]="data" -- output data
+- even binding (event) => "expression" -- react to user events.
+- two way binding [ngModel]="data"
