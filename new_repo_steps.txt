@@ -244,10 +244,6 @@ also happens to be called as ngStyle. More on that later.
 ngClass
 - Same as ngStyle, property of the directive is to be bound, which takes a js object as an argument.
 - This object has to be a key-value pair, key being css class name, value being the condition on which
-it'd be decided to assign the class or not.
+- it'd be decided to assign the class or not.
 - Write the necessary css class either in css file or in styles[] in component ts file of
 that component.
-
-both ngStyle and ngClass take key-value pair as an argument. key being the class name or style attribute
-and the value is javascript logic that'll decide the value for ngStyle, or boolean for ngClass to decide
-wheather or not that css class should be applied.

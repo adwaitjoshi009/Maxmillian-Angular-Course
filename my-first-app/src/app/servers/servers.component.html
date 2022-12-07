@@ -2,7 +2,6 @@
     <div class="row">
         <div class="col-xs-12"></div>
         <h3>in the Servers component now</h3>
-        <p *ngFor="let number of someArray">{{ number }}</p>
         <!-- [disabled] or [any html property] so this [] tells angular that this is 
         property binding. -->
         <!-- <input 
@@ -21,6 +20,7 @@
         <!-- <p>Server status: {{ serverStatus }}</p> -->
         <!-- <p *ngIf="serverPresent">Server status: {{ serverStatus }}</p> -->
         <p style="color: red" [innerText]="allowNewServer"></p>
-        <app-server *ngFor="let server of servers"></app-server>
+        <app-server></app-server>
+        <app-server></app-server>
     </div>
 </div>
